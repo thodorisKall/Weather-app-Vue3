@@ -5,6 +5,7 @@ import type { Coordinates } from "../types/coordinates"
 
 const weather_API_KEY = import.meta.env.VITE_WEATHER_API_KEY
 const geocoding_API_KEY = import.meta.env.VITE_GEOCODING_API_KEY
+const rapid_API_KEY = import.meta.env.VITE_RAPID_API_KEY
 
 const geocoding_BASE_URL = "https://api.opencagedata.com/geocode/v1/json?q="
 const weather_BASE_URL = "https://api.openweathermap.org/data/2.5/weather?lat="
@@ -33,6 +34,23 @@ export const getCoordinates = async (
     return res.data
   } catch (error: any) {
     console.error(`Error getting Current coordinates: ${error.message}`)
+    return null
+  }
+}
+
+export const getMoonData = async (lat: number, lon: number) => {
+  try {
+    const res = await axios.get("https://moon-phase.p.rapidapi.com/advanced", {
+      params: { lat, lon },
+      headers: {
+        "X-Rapidapi-Key": import.meta.env.VITE_RAPID_API_KEY,
+        "X-Rapidapi-Host": "moon-phase.p.rapidapi.com",
+      },
+    })
+
+    return res.data
+  } catch (error) {
+    console.error("Error fetching moon data:", error)
     return null
   }
 }
