@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "./variables.scss";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  font-family: "Roboto", serif;
+  background-color: $light-grey;
+  padding: 0 $lg-side-padding;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", serif;
+  font-weight: 800;
+}
+
+// Search
+.weather_search {
+  padding: 21px;
+  display: flex;
+  margin-bottom: 35px;
+  border-radius: 0 0 20px 20px;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background-color: $white;
+
+  h2 {
+    align-self: flex-start;
+  }
+
+  .weather_search_input {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: 49px;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 90%;
+      height: 100%;
+      padding-left: 8px;
+      margin-right: 5px;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+    }
+
+    button:hover {
+      cursor: pointer;
+      color: $blue;
+    }
+  }
+}
+
+// weather
+.weather_view {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 22px;
+
+  .weather_basic {
+    padding: 21px;
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    background-color: $blue;
+    border-radius: 20px;
+
+    span {
+      font-size: 58px;
+    }
+
+    .weather_basic_today {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        font-size: 67px;
+        font-weight: 500;
+      }
+
+      h3 {
+        font-size: 27px;
+      }
+
+      p {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .weather_details {
+    grid-row: 2/ 3;
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+
+    .weather_details_box {
+      background-color: $white;
+      padding: 21px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        height: 56px;
+        width: 56px;
+      }
+
+      h4 {
+        font-family: 27px;
+      }
+
+      h5 {
+        font-family: 22px;
+      }
+    }
+  }
+
+  .weather_moon {
+    border-radius: 20px;
+    padding: 15px;
+    background-color: $white;
+    grid-row: 1/ 3;
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 11px;
+
+    .weather_moon_box {
+      padding: 14px;
+      background-color: $light-grey;
+      border-radius: 14px;
+
+      p {
+        font-family: 14px;
+      }
+    }
+  }
+}
