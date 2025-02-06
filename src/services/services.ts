@@ -5,7 +5,7 @@ import type { Coordinates } from "../types/coordinates"
 
 const weather_API_KEY = import.meta.env.VITE_WEATHER_API_KEY
 const geocoding_API_KEY = import.meta.env.VITE_GEOCODING_API_KEY
-const rapid_API_KEY = import.meta.env.VITE_RAPID_API_KEY
+// const rapid_API_KEY = import.meta.env.VITE_RAPID_API_KEY
 
 const geocoding_BASE_URL = "https://api.opencagedata.com/geocode/v1/json?q="
 const weather_BASE_URL = "https://api.openweathermap.org/data/2.5/weather?lat="
