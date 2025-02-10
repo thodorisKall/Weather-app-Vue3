@@ -27,6 +27,7 @@ Additionally, the app displays information about the sun and moon, including:
 - Zodiac Sign
 
 ## Outcome
+![Στιγμιότυπο οθόνης (660)](https://github.com/user-attachments/assets/1cfd2e26-6eb1-4849-9dce-a727f36ba33f)
 
 The app features a search field and a button at the top for users to enter a city or area. The results are displayed in a grid-style UI, showing the weather details and celestial information in a structured and easy-to-read format.
 
